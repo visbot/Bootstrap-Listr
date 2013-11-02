@@ -38,7 +38,7 @@ define(ENABLE_ICONS, true);
 define(ENABLE_VIEWPORT, false);
 
 // Stylesheet locations
-define(BOOTSTRAP_NOICONS, '//s.visbot.net/css/bootstrap.visbot.min.css');
+define(BOOTSTRAP_NOICONS, '//visbot.github.io/Bootstrap-Listr/css/bootstrap.visbot.min.css');
 define(FONT_AWESOME, '//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css');
 
 // JavaScript locations
