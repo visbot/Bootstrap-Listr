@@ -30,7 +30,7 @@ i{margin-right:5px}
 @media(min-width:768px){.lead{font-size:22.5px}
 }
 small{font-size:85%}
-h1.h1{font-family:"Dosis",sans-serif;font-weight:500;line-height:1.1;color:#000}
+h1.h1{line-height:1.1;color:#000}
 h1 small.h1 small,{font-weight:normal;line-height:1;color:#b4bcc2}
 h1{margin-top:21px;margin-bottom:10.5px}
 h1,.h1{font-size:39px}
@@ -79,7 +79,7 @@ table td[class*="col-"],table th[class*="col-"]{display:table-cell;float:none}
 .table-responsive>.table-bordered>thead>tr:last-child>th,.table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>th,.table-responsive>.table-bordered>thead>tr:last-child>td,.table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>td{border-bottom:0}
 }
 .fa{color:#000}
-@font-face{font-family:'FontAwesome';src:url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.eot?v=4.0.0');src:url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.eot?#iefix&v=4.0.0') format('embedded-opentype'),url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.woff?v=4.0.0') format('woff'),url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.ttf?v=4.0.0') format('truetype'),url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.svg?v=4.0.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}.fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+@font-face{font-family:'FontAwesome';src:url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.eot?v=4.0.1');src:url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'),url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.woff?v=4.0.0') format('woff'),url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.ttf?v=4.0.0') format('truetype'),url('//netdna.bootstrapcdn.com/font-awesome/4.0.1/fonts/fontawesome-webfont.svg?v=4.0.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}.fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.3333333333333333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
 .fa-3x{font-size:3em}
