@@ -348,7 +348,7 @@ function time_ago($timestamp, $recursive = 0)
 <body>
 	<div class="container">
 		<h1>
-			<a href="http://<?=$this_domain?>"><?=$this_domain?></a><? foreach($dir_name as $dir => $name) : ?>
+			<a href="http://<?=$this_domain?>" target="_parent"><?=$this_domain?></a><? foreach($dir_name as $dir => $name) : ?>
 				<? if(($name != ' ') && ($name != '') && ($name != '.') && ($name != '/')): ?>
 					<? $parent = ''; ?>
 						<?for ($i = 1; $i <= $dir; $i++): ?>
