@@ -1,5 +1,4 @@
 # Bootstrap Listr
---vbfork
 
 A fork of [Bootstrap Listr](http://github.com/idleberg/Bootstrap-Listr), reduced in functionality and customized to suit the new [VISBOT](http://visbot.net) website for 2013
 
@@ -15,6 +14,12 @@ For local CSS deployment, please download [bootstrap.visbot.min.js](http://visbo
 
 * [idleberg](http://github.com/idleberg)
 * [visbot network](http://github.com/visbot)
+
+This project is built upon—or includes—code from the following people:
+
+* Greg Johnson - [PHP Directory Lister](http://greg-j.com/phpdl/)
+* Na Wong - [Listr](http://nadesign.net/listr/)
+* Joe McCullough - [Stupid Table Plugin](http://joequery.github.io/Stupid-Table-Plugin/)
 
 ## License
 
