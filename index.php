@@ -3,15 +3,14 @@
 error_reporting(1);
 
 /**
- *      VISBOT Listr
+ *      Bootstrap Listr
  *
- *       Author:    VISBOT NETWORK
- *         Info:    http://github.com/visbot/VISBOT-Listr
+ *       Author:    Jan T. Sott
+ *         Info:    http://github.com/idleberg/Bootstrap-Listr
  *      License:    Creative Commons 3.0 Attribution-ShareAlike 3.0
  *
  *      Credits:    Greg Johnson - PHPDL lite (http://greg-j.com/phpdl/)
  *                  Na Wong - Listr (http://nadesign.net/listr/)
- *                  Jan T. Sott - Bootstrap Listr (http://github.com/idleberg/Bootstrap-Listr)
  *                  Joe McCullough - Stupid Table Plugin (http://joequery.github.io/Stupid-Table-Plugin/)
  */
 
@@ -32,13 +31,13 @@ define(ENABLE_SORT, true);
 define(ENABLE_ICONS, true);
 
 // Enable Font Awesome icon types, requires ENABLE_ICONS to be enabled
-// define(ENABLE_AWESOME, true);
+define(ENABLE_AWESOME, false);
 
 // Set default viewport scaling
 define(ENABLE_VIEWPORT, false);
 
 // Stylesheet locations
-define(BOOTSTRAP_NOICONS, '//visbot.github.io/Bootstrap-Listr/css/bootstrap.visbot.min.css');
+define(BOOTSTRAP_THEME, 'default'); // Use Bootswatch theme names -> http://bootswatch.com/
 define(FONT_AWESOME, '//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css');
 
 // JavaScript locations
@@ -46,11 +45,11 @@ define(JQUERY, '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
 define(STUPID_TABLE, '//idleberg.github.io/Bootstrap-Listr/javascripts/stupidtable.min.js');
 
 // Icons
-define(FAV_ICON, '//s.visbot.net/img/favicon.png');
-define(IPHONE_ICON, '//s.visbot.net/img/touch-icon-iphone.png'); // 57x57
-define(IPHONE_ICON_RETINA, '//s.visbot.net/img/touch-icon-iphone-retina.png'); // 114x114
-define(IPAD_ICON, '//s.visbot.net/img/touch-icon-ipad-retina.png'); // 72x72
-define(IPAD_ICON_RETINA, '//s.visbot.net/img/touch-icon-ipad-retina.png'); // 144x144
+define(FAV_ICON, '');
+define(IPHONE_ICON, ''); // 57x57
+define(IPHONE_ICON_RETINA, ''); // 114x114
+define(IPAD_ICON, ''); // 72x72
+define(IPAD_ICON_RETINA, ''); // 144x144
 
 // Google Analytics ID
 define(ANALYTICS_ID, ''); // UA-XXXXX-Y or UA-XXXXX-YY
@@ -58,7 +57,7 @@ define(ANALYTICS_ID, ''); // UA-XXXXX-Y or UA-XXXXX-YY
 // Configure optional columns
 $table_options = array (
 	'size'=>true,
-	'age'=>false,
+	'age'=>true,
 	'perms'=>false
 );
 
@@ -113,16 +112,74 @@ $total_size = 0;
 if (ENABLE_ICONS && ENABLE_AWESOME) {
 	$filetype = array(
 		'archive'	=> array('7z','ace','adf','air','apk','arj','bz2','bzip','cab','d64','dmg','git','iso','gz','jar','lha','lzh','lz','lzma','pak','pkg','pimp','rar','safariextz','sfx','sit','sitx','sqx','sublime-package','tar','tgz','wsz','xar','zip'),
+		'apple'		=> array('app','ipa','ipsw','saver'),
 		'audio'		=> array('aac','ac3','aif','aiff','au','flac','m4a','m4p','mid','mp2','mp3','mpc','ogg','oma','sid','wav','wv'),
+		'calendar'	=> array('icbu','ics'),
 		'config'	=> array('conf','ini','htaccess','htpasswd','plist','sublime-settings','xpy'),
+		'contact'	=> array('abbu','oab','pab','vcard','vcf'),
 		'doc' 		=> array('doc','docs','docx','dot','key','numbers','odb','odf','odg','odp','ods','otg','otp','ots','ott','pages','pdf','pot','ppt','pptx','sdb','sdc','sdd','sdw','sxi','wpd','xls','xlsx','xps'),
+		'downloads'	=> array('crdownload','part'),
+		'ebook'		=> array('aeh','azw','ceb','chm','epub','fb2','ibooks','kf8','lit','lrf','lrx','mobi','pdb','pdg','prc','xeb'),
+		'email'		=> array('eml','emlx','mbox','msg','pst'),
 		'font'		=> array('fon','otf','pfm','ttf','woff'),
 		'image'		=> array('ai','bmp','cdr','emf','eps','gif','icns','ico','jp2','jpe','jpeg','jpg','jpx','pcx','pict','png','psd','psp','svg','tga','tif','tiff','webp','wmf'),
+		'link' 		=> array('lnk','url','webloc'),
+		'linux' 	=> array('bin','deb','rpm'),
+		'palette' 	=> array('ase','clm','clr','gpl'),
+		'raw' 		=> array('3fr','ari','arw','bay','cap','cr2','crw','dcs','dcr','dnf','dng','eip','erf','fff','iiq','k25','kdc','mdc','mef','mof','mrw','nef','nrw','obm','orf','pef','ptx','pxn','r3d','raf','raw','rwl','rw2','rwz','sr2','srf','srw','x3f'),
 		'script'	=> array('ahk','as','asp','aspx','bat','c','cfm','clj','cmd','cpp','css','el','erb','g','hml','htm','html','java','js','json','jsp','less','nsh','nsi','php','php3','pl','py','rb','rhtml','rss','sass','scala','scm','scpt','scptd','scss','sh','shtml','wsh','xhtml','xml','yml'),
 		'text'		=> array('asc','csv','diz','markdown','md','nfo','rst','rtf','text','txt'),
 		'video'		=> array('3g2','3gp','3gp2','3gpp','asf','avi','bik','bup','divx','flv','ifo','m4v','mkv','mkv','mov','mp4','mpeg','mpg','ogv','qt','smk','swf','vob','webm','wmv','xvid'),
 		'windows'	=> array('dll','exe','msi','ps1','scr','sys')
 	);
+}
+
+$cdn_pre = '//netdna.bootstrapcdn.com/bootswatch/3.0.0/';
+$cdn_post = '/bootstrap.min.css';
+
+switch(BOOTSTRAP_THEME) {
+	case 'amelia':
+		$bootstrap_cdn = $cdn_pre .'amelia'. $cdn_post;
+		break;
+	case 'cerulean':
+		$bootstrap_cdn = $cdn_pre .'cerulean'. $cdn_post;
+		break;
+	case 'cosmo':
+		$bootstrap_cdn = $cdn_pre .'cosmo'. $cdn_post;
+		break;
+	case 'cyborg':
+		$bootstrap_cdn = $cdn_pre .'cyborg'. $cdn_post;
+		break;
+	case 'flatly':
+		$bootstrap_cdn = $cdn_pre .'flatly'. $cdn_post;
+		break;
+	case 'journal':
+		$bootstrap_cdn = $cdn_pre .'journal'. $cdn_post;
+		break;
+	case 'readable':
+		$bootstrap_cdn = $cdn_pre .'readable'. $cdn_post;
+		break;
+	case 'simplex':
+		$bootstrap_cdn = $cdn_pre .'simplex'. $cdn_post;
+		break;
+	case 'slate':
+		$bootstrap_cdn = $cdn_pre .'slate'. $cdn_post;
+		break;
+	case 'spacelab':
+		$bootstrap_cdn = $cdn_pre .'spacelab'. $cdn_post;
+		break;
+	case 'united':
+		$bootstrap_cdn = $cdn_pre .'united'. $cdn_post;
+		break;
+	case 'paraiso':
+		$bootstrap_cdn = '//idleberg.github.io/Paraiso-Bootstrap-Listr/stylesheets/bootstrap.paraiso.min.css';
+		break;
+	default:
+		if(ENABLE_ICONS) {
+			$bootstrap_cdn = '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css';
+		} else {
+			$bootstrap_cdn = '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css';
+		}
 }
 
 // Count optional columns
@@ -155,19 +212,39 @@ if ($handle = opendir('.'))
 
 			if (ENABLE_ICONS && ENABLE_AWESOME) {
 				$sort_icon = 'fa fa-sort';
-				$folder_icon = 'fa fa-folder-open';
+				$folder_icon = 'fa fa-folder';
 				if(in_array($item[lext], $filetype['archive'])){
 					$item['class'] = 'fa fa-archive';
+				}elseif(in_array($item[lext], $filetype['apple'])){
+					$item['class'] = 'fa fa-apple';
 				}elseif(in_array($item[lext], $filetype['audio'])){
 					$item['class'] = 'fa fa-music';
+				}elseif(in_array($item[lext], $filetype['calendar'])){
+					$item['class'] = 'fa fa-calendar';
 				}elseif(in_array($item[lext], $filetype['config'])){
 					$item['class'] = 'fa fa-cogs';
+				}elseif(in_array($item[lext], $filetype['contact'])){
+					$item['class'] = 'fa fa-group';
 				}elseif(in_array($item[lext], $filetype['doc'])){
 					$item['class'] = 'fa fa-file-text';
+				}elseif(in_array($item[lext], $filetype['downloads'])){
+					$item['class'] = 'fa fa-cloud-download';
+				}elseif(in_array($item[lext], $filetype['ebook'])){
+					$item['class'] = 'fa fa-book';
+				}elseif(in_array($item[lext], $filetype['email'])){
+					$item['class'] = 'fa fa-envelope';
 				}elseif(in_array($item[lext], $filetype['font'])){
 					$item['class'] = 'fa fa-font';
 				}elseif(in_array($item[lext], $filetype['image'])){
 					$item['class'] = 'fa fa-picture-o';
+				}elseif(in_array($item[lext], $filetype['link'])){
+					$item['class'] = 'fa fa-link';
+				}elseif(in_array($item[lext], $filetype['linux'])){
+					$item['class'] = 'fa fa-linux';
+				}elseif(in_array($item[lext], $filetype['palette'])){
+					$item['class'] = 'fa fa-tasks';
+				}elseif(in_array($item[lext], $filetype['raw'])){
+					$item['class'] = 'fa fa-camera';
 				}elseif(in_array($item[lext], $filetype['script'])){
 					$item['class'] = 'fa fa-code';
 				}elseif(in_array($item[lext], $filetype['text'])){
@@ -177,7 +254,7 @@ if ($handle = opendir('.'))
 				}elseif(in_array($item[lext], $filetype['windows'])){
 					$item['class'] = 'fa fa-windows';
 				}else{
-					$item['class'] = 'fa fa-file';		
+					$item['class'] = 'fa fa-file-o';		
 				}
 			} else {
 				$sort_icon = 'glyphicon glyphicon-sort';
@@ -341,8 +418,8 @@ function time_ago($timestamp, $recursive = 0)
     <? if (IPHONE_ICON_RETINA) { ?><link rel="apple-touch-icon" sizes="72x72" href="<?=IPHONE_ICON_RETINA?>" /><? } ?>
     <? if (IPAD_ICON) { ?><link rel="apple-touch-icon" sizes="114x114" href="<?=IPAD_ICON?>" /><? } ?>
     <? if (IPAD_ICON_RETINA) { ?><link rel="apple-touch-icon" sizes="144x144" href="<?=IPAD_ICON_RETINA?>" /><? } ?>
-	<link rel="stylesheet" href="<?=BOOTSTRAP_NOICONS?>" />
-	<link href='//fonts.googleapis.com/css?family=Dosis:400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="<?=$bootstrap_cdn?>" />
+	<? if (ENABLE_AWESOME) { ?><link rel="stylesheet" href="<?=FONT_AWESOME?>" /><? } ?>
 	<style type="text/css">th {cursor: pointer}<?if (ENABLE_ICONS && ENABLE_AWESOME) { ?>i:before{width:28px}<? } ?></style>
 </head>
 <body>
@@ -369,7 +446,7 @@ function time_ago($timestamp, $recursive = 0)
 			</thead>
 			<tfoot>
 				<tr>
-					<td colspan="<?=$table_count+1?>"><small class="pull-left"><?=$contained?></small><small class="pull-right"><a href="https://github.com/idleberg/Bootstrap-Listr" title="Fork me on GitHub" target="_blank"><i class="fa fa-github-alt fa-lg"></i></a></small></td>
+					<td colspan="<?=$table_count+1?>"><small class="pull-left"><?=$contained?></small><small class="pull-right">Fork me on <a href="https://github.com/idleberg/Bootstrap-Listr" target="_blank">GitHub</a></small></td>
 				</tr>
 			</tfoot>
 			<tbody>
