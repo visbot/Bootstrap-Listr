@@ -1,12 +1,15 @@
 # Bootstrap Listr
+--vbfork
 
 A fork of [Bootstrap Listr](http://github.com/idleberg/Bootstrap-Listr), reduced in functionality and customized to suit the new [VISBOT](http://visbot.net) website for 2013
 
-[Demo](http://visbot.github.io/Bootstrap-Listr/)
+*[Demo](http://visbot.github.io/Bootstrap-Listr/)*
 
 ## Installation
 
 Clone repository `git clone https://github.com/visbot/Bootstrap-Listr`
+
+For local CSS deployment, please download [bootstrap.visbot.min.js](http://visbot.github.io/Bootstrap-Listr/css/bootstrap.visbot.min.css)
 
 ## Authors
 
