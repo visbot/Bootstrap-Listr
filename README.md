@@ -1,6 +1,8 @@
 # Bootstrap Listr
 
-A fork of [Bootstrap Listr](http://github.com/idleberg/Bootstrap-Listr), reduced in functionality and customized to suit the new [VISBOT](http://visbot.net) website for 2013.
+A fork of [Bootstrap Listr](http://github.com/idleberg/Bootstrap-Listr), reduced in functionality and customized to suit the new [VISBOT](http://visbot.net) website for 2013
+
+[Demo](http://visbot.github.io/Bootstrap-Listr/)
 
 ## Installation
 
